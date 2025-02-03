@@ -17,6 +17,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@babel/preset-env": "7.22.5",
+    "schema-utils": "^4.3.0",
     "terser-webpack-plugin": "^4.2.3",
     "webpack-dev-server": "^3"
   }
