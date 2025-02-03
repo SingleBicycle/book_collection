@@ -1,12 +1,14 @@
 {
   "name": "test-app",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.4",
-    "stringify": "^5.2.0",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
