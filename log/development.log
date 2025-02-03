@@ -1,0 +1,233 @@
+  [1m[35m (867.6ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (587.5ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2025-01-20 06:37:32.162477"], ["updated_at", "2025-01-20 06:37:32.162477"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2025-01-20 06:47:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb (Duration: 28.5ms | Allocations: 604)
+Completed 200 OK in 152ms (Views: 77.8ms | ActiveRecord: 0.0ms | Allocations: 4820)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20250120064820)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20250120064820"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 192.168.65.1 at 2025-01-20 06:49:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 1670)
+[Webpacker] Compiling...
+Started GET "/books" for 192.168.65.1 at 2025-01-20 06:49:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 55.3ms | Allocations: 5199)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 647e4a8e37688b365fa5
+Version: webpack 4.47.0
+Time: 2960ms
+Built at: 01/20/2025 6:49:17 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb025c487b217f99cf05.js    7.9 KiB  application  [emitted] [immutable]  application
+js/application-fb025c487b217f99cf05.js.map   3.53 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-fb025c487b217f99cf05.js js/application-fb025c487b217f99cf05.js.map
+[./app/javascript/packs/application.js] 4 KiB {application} [built] [failed] [1 error]
+
+ERROR in ./app/javascript/packs/application.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /csce431/test_app/babel-virtual-resolve-base.js
+    at new NodeError (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:195:5)
+    at packageResolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:899:9)
+    at moduleResolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:939:18)
+    at defaultResolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:1017:15)
+    at resolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:1030:12)
+    at tryImportMetaResolve (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:148:45)
+    at resolveStandardizedNameForImport (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:173:19)
+    at resolveStandardizedName (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:185:22)
+    at loadPlugin (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:55:7)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/csce431/test_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/csce431/test_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/csce431/test_app/node_modules/gensync/index.js:291:5)
+    at /csce431/test_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/csce431/test_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/csce431/test_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/csce431/test_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/csce431/test_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /csce431/test_app/node_modules/@babel/core/lib/gensync-utils/functional.js:39:27
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:349:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:316:14)
+    at chainWalker.next (<anonymous>)
+    at loadFileChain (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:191:24)
+    at loadFileChain.next (<anonymous>)
+    at buildRootChain (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:77:27)
+    at buildRootChain.next (<anonymous>)
+    at loadPrivatePartialConfig (/csce431/test_app/node_modules/@babel/core/lib/config/partial.js:72:62)
+    at loadPrivatePartialConfig.next (<anonymous>)
+    at loadPartialConfig (/csce431/test_app/node_modules/@babel/core/lib/config/partial.js:115:25)
+    at loadPartialConfig.next (<anonymous>)
+    at step (/csce431/test_app/node_modules/gensync/index.js:269:25)
+    at evaluateAsync (/csce431/test_app/node_modules/gensync/index.js:291:5)
+    at /csce431/test_app/node_modules/gensync/index.js:93:9
+    at new Promise (<anonymous>)
+    at async (/csce431/test_app/node_modules/gensync/index.js:92:14)
+    at stopHiding - secret - don't use this - v1 (/csce431/test_app/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:47:12)
+    at loadPartialConfigAsync (/csce431/test_app/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/csce431/test_app/node_modules/babel-loader/lib/index.js:133:26)
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (/csce431/test_app/node_modules/babel-loader/lib/index.js:3:103)
+    at _next (/csce431/test_app/node_modules/babel-loader/lib/index.js:4:194)
+    at /csce431/test_app/node_modules/babel-loader/lib/index.js:4:364
+    at new Promise (<anonymous>)
+
+  Rendered layout layouts/application.html.erb (Duration: 10388.9ms | Allocations: 31179)
+Completed 200 OK in 10496ms (Views: 10416.2ms | ActiveRecord: 3.3ms | Allocations: 35426)
+
+
+[Webpacker] Compilation failed:
+Hash: 647e4a8e37688b365fa5
+Version: webpack 4.47.0
+Time: 2031ms
+Built at: 01/20/2025 6:49:21 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb025c487b217f99cf05.js    7.9 KiB  application  [emitted] [immutable]  application
+js/application-fb025c487b217f99cf05.js.map   3.53 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-fb025c487b217f99cf05.js js/application-fb025c487b217f99cf05.js.map
+[./app/javascript/packs/application.js] 4 KiB {application} [built] [failed] [1 error]
+
+ERROR in ./app/javascript/packs/application.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+Error: Cannot find package '@babel/plugin-proposal-private-methods' imported from /csce431/test_app/babel-virtual-resolve-base.js
+    at new NodeError (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:195:5)
+    at packageResolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:899:9)
+    at moduleResolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:939:18)
+    at defaultResolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:1017:15)
+    at resolve (/csce431/test_app/node_modules/@babel/core/lib/vendor/import-meta-resolve.js:1030:12)
+    at tryImportMetaResolve (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:148:45)
+    at resolveStandardizedNameForImport (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:173:19)
+    at resolveStandardizedName (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:185:22)
+    at loadPlugin (/csce431/test_app/node_modules/@babel/core/lib/config/files/plugins.js:55:7)
+    at loadPlugin.next (<anonymous>)
+    at createDescriptor (/csce431/test_app/node_modules/@babel/core/lib/config/config-descriptors.js:140:16)
+    at createDescriptor.next (<anonymous>)
+    at step (/csce431/test_app/node_modules/gensync/index.js:261:32)
+    at evaluateAsync (/csce431/test_app/node_modules/gensync/index.js:291:5)
+    at /csce431/test_app/node_modules/gensync/index.js:44:11
+    at Array.forEach (<anonymous>)
+    at Function.async (/csce431/test_app/node_modules/gensync/index.js:43:15)
+    at Function.all (/csce431/test_app/node_modules/gensync/index.js:216:13)
+    at Generator.next (<anonymous>)
+    at createDescriptors (/csce431/test_app/node_modules/@babel/core/lib/config/config-descriptors.js:102:41)
+    at createDescriptors.next (<anonymous>)
+    at createPluginDescriptors (/csce431/test_app/node_modules/@babel/core/lib/config/config-descriptors.js:99:17)
+    at createPluginDescriptors.next (<anonymous>)
+    at /csce431/test_app/node_modules/@babel/core/lib/gensync-utils/functional.js:39:27
+    at Generator.next (<anonymous>)
+    at mergeChainOpts (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:349:34)
+    at mergeChainOpts.next (<anonymous>)
+    at chainWalker (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:316:14)
+    at chainWalker.next (<anonymous>)
+    at loadFileChain (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:191:24)
+    at loadFileChain.next (<anonymous>)
+    at buildRootChain (/csce431/test_app/node_modules/@babel/core/lib/config/config-chain.js:77:27)
+    at buildRootChain.next (<anonymous>)
+    at loadPrivatePartialConfig (/csce431/test_app/node_modules/@babel/core/lib/config/partial.js:72:62)
+    at loadPrivatePartialConfig.next (<anonymous>)
+    at loadPartialConfig (/csce431/test_app/node_modules/@babel/core/lib/config/partial.js:115:25)
+    at loadPartialConfig.next (<anonymous>)
+    at step (/csce431/test_app/node_modules/gensync/index.js:269:25)
+    at evaluateAsync (/csce431/test_app/node_modules/gensync/index.js:291:5)
+    at /csce431/test_app/node_modules/gensync/index.js:93:9
+    at new Promise (<anonymous>)
+    at async (/csce431/test_app/node_modules/gensync/index.js:92:14)
+    at stopHiding - secret - don't use this - v1 (/csce431/test_app/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:47:12)
+    at loadPartialConfigAsync (/csce431/test_app/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/csce431/test_app/node_modules/babel-loader/lib/index.js:133:26)
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (/csce431/test_app/node_modules/babel-loader/lib/index.js:3:103)
+    at _next (/csce431/test_app/node_modules/babel-loader/lib/index.js:4:194)
+    at /csce431/test_app/node_modules/babel-loader/lib/index.js:4:364
+    at new Promise (<anonymous>)
+
+  Rendered layout layouts/application.html.erb (Duration: 8406.5ms | Allocations: 12001)
+Completed 200 OK in 8412ms (Views: 8383.0ms | ActiveRecord: 27.1ms | Allocations: 12478)
+
+
+Started GET "/" for 192.168.65.1 at 2025-01-20 06:50:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.1ms | Allocations: 264)
+Completed 200 OK in 92ms (Views: 46.6ms | ActiveRecord: 0.0ms | Allocations: 1277)
+
+
+Started GET "/" for 192.168.65.1 at 2025-01-20 06:51:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.7.10/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.3ms | Allocations: 499)
+Completed 200 OK in 45ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 3705)
+
+
+Started GET "/books" for 192.168.65.1 at 2025-01-20 06:52:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 131.3ms | Allocations: 8238)
+Completed 200 OK in 193ms (Views: 144.2ms | ActiveRecord: 2.4ms | Allocations: 12569)
+
+
+Started GET "/books/new" for 192.168.65.1 at 2025-01-20 06:52:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 135.3ms | Allocations: 5032)
+  Rendered books/new.html.erb within layouts/application (Duration: 144.6ms | Allocations: 5458)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 190.7ms | Allocations: 9076)
+Completed 200 OK in 223ms (Views: 194.4ms | ActiveRecord: 10.1ms | Allocations: 12947)
+
+
