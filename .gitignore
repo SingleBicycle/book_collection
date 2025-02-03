@@ -1,0 +1,9 @@
+# Ignore master key (Rails secret key)
+config/master.key
+
+# Ignore log files
+log/*.log
+
+# Ignore node_modules (for Node.js projects)
+node_modules/
+
